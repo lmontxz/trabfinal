@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Doações</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="mapa.css" />
+</head>
+
+<body>
+
+  <header class="navbar">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="estatisticas.html">Estatísticas</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="mapa-container">
+        <h1>Locais de Coleta Próximos</h1>
+        <p>Confira onde você pode entregar sua doação.</p>
+        <div id="mapa"></div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+
+        // Coordenadas centrais fictícias (ex: Belo Horizonte)
+        const mapa = L.map('mapa').setView([-19.9191, -43.9386], 13);
+
+        // Camada base com tiles gratuitos do OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(mapa);
+
+        // Locais fictícios de coleta
+        const locais = [
+            {
+                nome: "Centro Comunitário Esperança",
+                coordenadas: [-19.9191, -43.9386]
+            },
+            {
+                nome: "Igreja São Lucas",
+                coordenadas: [-19.9275, -43.9352]
+            },
+            {
+                nome: "Escola Municipal do Saber",
+                coordenadas: [-19.9133, -43.9457]
+            },
+            {
+                nome: "Associação Viver Bem",
+                coordenadas: [-19.9244, -43.9490]
+            }
+        ];
+
+        // Adiciona marcadores
+        locais.forEach(local => {
+            L.marker(local.coordenadas)
+                .addTo(mapa)
+                .bindPopup(`<strong>${local.nome}</strong><br>Local de coleta.`);
+        });
+
+    </script>
+</body>
+
+</html>

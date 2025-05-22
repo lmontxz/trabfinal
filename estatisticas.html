@@ -1,0 +1,77 @@
+<!-- estatisticas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estatísticas</title>
+    <link rel="stylesheet" href="estatisticas.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="estatisticas.html">Estatísticas</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div class="container">
+        <section class="stats">
+            <h1>Impacto do Projeto</h1>
+            <div class="cards">
+                <div class="card">
+                    <h2 id="d1">0</h2>
+                    <p>Doações Realizadas</p>
+                </div>
+                <div class="card">
+                    <h2 id="d2">0</h2>
+                    <p>Pessoas Ajudadas</p>
+                </div>
+                <div class="card">
+                    <h2 id="d3">0</h2>
+                    <p>Voluntários Ativos</p>
+                </div>
+                <div class="card">
+                    <h2 id="d4">0</h2>
+                    <p>Instituições Parceiras</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+
+        function animateValue(id, start, end, duration) {
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            const obj = document.getElementById(id);
+            const timer = setInterval(() => {
+                current += increment;
+                obj.textContent = current;
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            animateValue("d1", 0, 1200, 2000);
+            animateValue("d2", 0, 2500, 2000);
+            animateValue("d3", 0, 85, 2000);
+            animateValue("d4", 0, 15, 2000);
+        });
+
+    </script>
+</body>
+
+</html>

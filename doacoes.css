@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f7fce8;
+	color: #2d2d2d;
+}
+
+.navbar {
+	background-color: #4d7c4d;
+	padding: 10px 5px;
+	text-align: center;
+}
+
+.nav-list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.nav-list a {
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
+	transition: background-color 0.8s ease;
+}
+
+.nav-list a:hover {
+	background-color: rgb(37, 102, 42);
+	padding: 8px 3px;
+}
+
+.historico-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.historico-container h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #2f5e38;
+}
+
+.subtitulo {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.lista-doacoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-doacao {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.card-doacao:hover {
+  transform: translateY(-5px);
+}
+
+.card-doacao h3 {
+  color: #f08030;
+  margin-bottom: 10px;
+}
+
+.card-doacao p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .historico-container h1 {
+    font-size: 1.6em;
+  }
+
+  .subtitulo {
+    font-size: 1em;
+  }
+}

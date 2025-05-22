@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Doe Alimentos</title>
+    <link rel="stylesheet" href="login.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Crie sua conta</h2>
+        <form id="cadastroForm">
+            <input type="text" id="nome" placeholder="Nome completo" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <input type="password" id="confirmaSenha" placeholder="Confirmar senha" required>
+            <button type="submit" class="btn-register">Cadastrar</button>
+        </form>
+
+        <div class="divider">ou</div>
+
+        <button class="btn-google" onclick="loginComGoogle()">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Icon">
+            Entrar com Google
+        </button>
+
+        <p>Já tem uma conta?</p>
+        <button class="btn-login" onclick="voltarLogin()">Entrar</button>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirmaSenha').value;
+
+            if (senha !== confirmaSenha) {
+                alert("As senhas não coincidem.");
+                return;
+            }
+
+            alert(`Cadastro realizado com sucesso para ${nome}!`);
+            window.location.href = "index.html";
+        });
+
+        function voltarLogin() {
+            window.location.href = "index.html";
+        }
+
+        function loginComGoogle() {
+            alert("Integração com Google ainda não implementada.");
+        }
+
+    </script>
+</body>
+
+</html>

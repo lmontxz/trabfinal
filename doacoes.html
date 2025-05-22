@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histórico de Doações</title>
+    <link rel="stylesheet" href="doacoes.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="historico-container">
+        <h1>Histórico de Doações</h1>
+        <p class="subtitulo">Veja as doações que você já realizou.</p>
+        <div id="lista-doacoes" class="lista-doacoes"></div>
+    </main>
+
+    <script>
+        const doacoes = [
+            {
+                data: "12/05/2025",
+                local: "Centro Comunitário Esperança",
+                itens: "Arroz, Feijão, Macarrão"
+            },
+            {
+                data: "20/04/2025",
+                local: "Escola Municipal do Saber",
+                itens: "Leite em pó, Farinha, Óleo"
+            },
+            {
+                data: "05/03/2025",
+                local: "Igreja São Lucas",
+                itens: "Cestas básicas completas"
+            }
+        ];
+
+        const container = document.getElementById("lista-doacoes");
+
+        doacoes.forEach((d) => {
+            const card = document.createElement("div");
+            card.classList.add("card-doacao");
+
+            card.innerHTML = `
+    <h3>${d.local}</h3>
+    <p><strong>Data:</strong> ${d.data}</p>
+    <p><strong>Itens:</strong> ${d.itens}</p>
+  `;
+
+            container.appendChild(card);
+        });
+
+    </script>
+</body>
+
+</html>

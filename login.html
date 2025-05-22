@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Doe Alimentos</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Bem-vindo ao Doe Alimentos</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+        <p>Não tem uma conta?</p>
+        <button class="btn-register" onclick="criarConta()">Criar Conta</button>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            if (email === "teste@email.com" && senha === "123456") {
+                alert("Login realizado com sucesso.");
+                window.location.href = "index.html";
+            } else {
+                alert("Email ou senha inválidos.");
+            }
+        });
+
+        function criarConta() {
+            window.location.href = "cadastro.html";
+        }
+
+    </script>
+
+</body>
+
+</html>
